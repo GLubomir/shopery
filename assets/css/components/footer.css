@@ -1,0 +1,261 @@
+.footer{
+	background-color: var(--c-gray-9);
+	padding-top: var(--space-xl);
+}
+
+.footer__logo img{
+	display: block;
+	max-width: 100%;
+	height: auto;
+}
+
+/* TOP */
+
+.footer__top-box{
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 100px;
+	padding-bottom: var(--space-xl);
+	border-bottom: 1px solid var(--c-gray-5)
+}
+
+.footer__info{
+	display: flex;
+	flex-direction: column;
+	gap:16px;
+	max-width: 336px;
+}
+
+.footer__slogan{
+	color:var(--c-gray-5);
+	font-size: var(--fz-sm);
+}
+
+.footer__contact{
+	display: flex;
+	gap: 16px;
+	align-items: center;
+	flex-wrap: wrap;
+}
+
+.footer__contact a{
+	color:var(--c-white);
+	font-size: var(--fz-md);
+	line-height: 150%;
+	border-bottom: 2px solid var(--c-primary)
+}
+
+.footer__contact{
+	color:var(--c-gray-5);
+	font-size: var(--fz-md);
+	line-height: 150%;
+}
+
+.footer__menus{
+	display: flex;
+	justify-content: space-between;
+	align-items:flex-start;
+	flex: 0 1 100%;
+	gap: var(--space-lg);
+}
+
+.footer .menu--footer{
+	min-width: 0;
+	flex: 1 1 0;
+}
+
+.footer .menu__toggle{
+	display: block;
+	width: 100%;
+	padding: 0;
+	border: 0;
+	background: transparent;
+	color: var(--c-white);
+	font: inherit;
+	text-align: left;
+}
+
+.footer .menu__toggle-icon{
+	display: none;
+}
+
+.footer .menu__panel[hidden]{
+	display: none;
+}
+
+.footer__bottom{
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 20px;
+	padding: var(--space-md) 0;
+}
+
+.footer__copy{
+	color:var(--c-gray-5);
+	font-size: var(--fz-sm);
+	line-height: 150%;
+}
+
+.footer__payment-methods{
+	display: flex;
+	gap: 8px;
+	flex-wrap: wrap;
+}
+
+@media (max-width: 1023px){
+	.footer{
+		padding-top: var(--space-lg);
+	}
+
+	.footer__top-box{
+		flex-direction: column;
+		align-items: flex-start;
+		gap: 40px;
+		padding-bottom: var(--space-lg);
+	}
+
+	.footer__info,
+	.footer__menus{
+		width: 100%;
+	}
+
+	.footer__info{
+		max-width: none;
+	}
+
+	.footer__menus{
+		display: grid;
+		grid-template-columns: repeat(2, minmax(0, 1fr));
+		gap: var(--space-md) var(--space-lg);
+	}
+
+	.footer__bottom{
+		flex-direction: column;
+		align-items: flex-start;
+	}
+
+	.footer__copy{
+		display: flex;
+		flex-wrap: wrap;
+		gap: 4px 12px;
+	}
+}
+
+@media (max-width: 479px){
+	.footer{
+		padding-top: var(--space-md);
+	}
+
+	.footer__top-box{
+		gap: var(--space-md);
+		padding-bottom: var(--space-md);
+	}
+
+	.footer__info{
+		gap: 12px;
+	}
+
+	.footer__contact{
+		flex-direction: column;
+		align-items: flex-start;
+		gap: 12px;
+	}
+
+	.footer__contact span{
+		display: none;
+	}
+
+	.footer__menus{
+		display: flex;
+		flex-direction: column;
+		gap: 0;
+	}
+
+	.footer .menu--footer{
+		width: 100%;
+		padding: 14px 0;
+		border-bottom: 1px solid var(--c-gray-7);
+	}
+
+	.footer .menu--footer:first-child{
+		border-top: 1px solid var(--c-gray-7);
+	}
+
+	.footer .menu__toggle{
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		gap: 12px;
+		cursor: pointer;
+	}
+
+	.footer .menu__toggle-icon{
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		width: 18px;
+		height: 18px;
+		flex-shrink: 0;
+	}
+
+	.footer .menu__toggle-icon::before{
+		content: '';
+		width: 8px;
+		height: 8px;
+		border-right: 1.5px solid var(--c-white);
+		border-bottom: 1.5px solid var(--c-white);
+		transform: rotate(45deg);
+		transition: transform 180ms ease;
+	}
+
+	.footer .menu--footer.is-open .menu__toggle-icon::before{
+		transform: rotate(225deg);
+	}
+
+	.footer .menu__panel{
+		padding-top: 14px;
+	}
+
+	.footer .menu__list{
+		gap: 10px;
+	}
+
+	.footer__bottom{
+		align-items: center;
+		gap: 16px;
+		padding: 20px 0;
+		text-align: center;
+	}
+
+	.footer__copy,
+	.footer__payment-methods{
+		justify-content: center;
+	}
+}
+
+@media (max-width: 320px){
+	.footer__top-box{
+		gap: 20px;
+	}
+
+	.footer__slogan,
+	.footer__copy{
+		font-size: var(--fz-xs);
+	}
+
+	.footer__contact a,
+	.footer .menu__name-menu{
+		font-size: var(--fz-sm);
+	}
+
+	.footer__payment-methods{
+		gap: 6px;
+	}
+
+	.footer__payment-methods img{
+		max-width: 48px;
+		height: auto;
+	}
+}

@@ -1,0 +1,19 @@
+.button{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-size: var(--fz-md);
+	padding: 14px 0;
+}
+
+
+.button--primary{
+	background:var(--c-primary);
+	color:var(--c-white);
+	
+}
+
+.button--white{
+	background:var(--c-white);
+	color:var(--c-primary);
+}

@@ -1,0 +1,85 @@
+.dropdown{
+	box-sizing: border-box;
+	max-height: 0px;
+	overflow: hidden;
+	cursor: pointer;	
+	transition: max-height 250ms ease;
+}
+
+.dropdown.uploaded{
+	max-height: var(--heightContainer);
+
+}
+
+.dropdown.active{
+	max-height: var(--heightContainerActivation);
+	transition: max-height 250ms ease;
+
+}
+
+.dropdown img{
+	transition: all ease 250ms;
+	transform: rotate(0deg);
+}
+
+.dropdown.active img{
+	transform: rotate(-180deg);
+	transition: all ease 250ms;
+}
+
+.dropdown.lang, .dropdown.currency{
+	font-size: var(--fz-xs);
+	line-height: 130%;
+	color:var(--c-gray-6);
+	
+}
+
+.dropdown.lang .dropdown__current,
+.dropdown.currency .dropdown__current{
+	display: flex;
+	align-items: center;
+	gap: 6px;
+}
+
+.dropdown__current{
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	width: 100%;
+}
+
+.dropdown__current span{
+	display: block;
+	line-height: inherit;
+}
+
+.dropdown__list{
+	opacity: 0;
+	padding-top: 4px;
+	transform: translateY(-4px);
+	transition: opacity 180ms ease, transform 180ms ease;
+}
+
+.dropdown__item{
+	padding: 2px 0;
+	line-height: 130%;
+}
+
+.dropdown.active .dropdown__list{
+	opacity: 1;
+	transform: translateY(0);
+}
+
+@media (prefers-reduced-motion: reduce){
+	.dropdown,
+	.dropdown.active,
+	.dropdown__list{
+		transition: none;
+	}
+
+	.dropdown__list,
+	.dropdown.active .dropdown__list{
+		opacity: 1;
+		transform: none;
+	}
+}
